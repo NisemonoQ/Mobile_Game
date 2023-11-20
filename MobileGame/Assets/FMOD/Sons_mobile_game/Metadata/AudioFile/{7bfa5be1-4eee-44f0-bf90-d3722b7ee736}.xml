@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7bfa5be1-4eee-44f0-bf90-d3722b7ee736}">
+		<property name="assetPath">
+			<value>PERCUSSION.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.3433560090702947</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{47f81a86-6d70-419c-badb-c614937bb290}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d1737816-50d4-4928-ad47-494b4aee92bc}">
+		<property name="name">
+			<value>VITESSE</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8d35a1b3-c3a8-4cca-a3d3-71311a90b958}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ad6e94c1-3726-44ef-9f2e-26b46c4cdd28}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ad6e94c1-3726-44ef-9f2e-26b46c4cdd28}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
