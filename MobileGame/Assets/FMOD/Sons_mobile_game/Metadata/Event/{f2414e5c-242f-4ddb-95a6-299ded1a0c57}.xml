@@ -34,7 +34,6 @@
 			<destination>{622ce1f1-6d37-4d86-b4df-a652c1e4db31}</destination>
 		</relationship>
 		<relationship name="parameters">
-			<destination>{20075ba1-2175-4152-bd7f-8e79c2cf2ef3}</destination>
 			<destination>{4ddcf556-18c1-46c6-84a3-ab681d712e18}</destination>
 		</relationship>
 		<relationship name="banks">
@@ -49,9 +48,6 @@
 	<object class="MasterTrack" id="{0b7813bb-c530-469c-a70f-6a4fb107354f}">
 		<relationship name="automationTracks">
 			<destination>{15a0aa93-d714-4e79-9791-3f5fd8f01c6a}</destination>
-		</relationship>
-		<relationship name="modules">
-			<destination>{8e1238b3-e474-4ce0-8866-95f019e9f1a3}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{03220f5e-3862-4e3c-b282-f517814eb0f2}</destination>
@@ -124,11 +120,6 @@
 			<destination>{2a9f0e37-516f-4dd5-89c4-faa5527978db}</destination>
 		</relationship>
 	</object>
-	<object class="ActionSheet" id="{20075ba1-2175-4152-bd7f-8e79c2cf2ef3}">
-		<relationship name="modules">
-			<destination>{8e1238b3-e474-4ce0-8866-95f019e9f1a3}</destination>
-		</relationship>
-	</object>
 	<object class="ParameterProxy" id="{4ddcf556-18c1-46c6-84a3-ab681d712e18}">
 		<relationship name="preset">
 			<destination>{ad6e94c1-3726-44ef-9f2e-26b46c4cdd28}</destination>
@@ -153,7 +144,6 @@
 			<destination>{caf19da4-8f0b-44d8-8324-20074881ad6f}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{8e1238b3-e474-4ce0-8866-95f019e9f1a3}" />
 	<object class="MixerBusEffectChain" id="{822e892b-5b0b-4217-ac75-9a5130dfcdbe}">
 		<relationship name="effects">
 			<destination>{5ecf74f1-a5c2-4357-a984-4a0870c48d01}</destination>
@@ -687,7 +677,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{20e97a7d-9968-4640-84a7-600b2d7b9784}" />
-	<object class="GainEffect" id="{f95f78b5-19c0-4143-a24f-89a3549a29a1}" />
+	<object class="GainEffect" id="{f95f78b5-19c0-4143-a24f-89a3549a29a1}">
+		<property name="gain">
+			<value>-4.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{3f5e2581-7227-4680-b065-8247016405e8}">
 		<property name="position">
 			<value>13.306349206349207</value>

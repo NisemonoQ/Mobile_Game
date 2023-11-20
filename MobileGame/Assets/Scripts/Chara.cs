@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class Chara : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rigidbody2D rb;
+    private Vector2 toTheTop;
+    public float moving = 10f;
+
+    bool jumpregister; 
+
+    bool up = false;
+    bool down = true;
+
+    bool grounded = true; 
+
     void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
+    {
+        Vector2 move = Vector2.right * Input.GetAxisRaw("Horizontal") * moving;
+        move.y = rb.velocity.y;
+
+        if(jumpregister)
+        {
+            
+        }
+
+        rb.velocity = move;
+    }
+
+    void Gravitas()
     {
         
     }
+
+
 }
