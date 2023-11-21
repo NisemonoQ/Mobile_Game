@@ -23,7 +23,9 @@ public class Chara : MonoBehaviour
     void Start()
     {
         chara = GetComponent<CharacterController>();
+        perso = GetComponent<GameObject>();
         gray = true;
+        beyond = transform.position;
 
     }
 
