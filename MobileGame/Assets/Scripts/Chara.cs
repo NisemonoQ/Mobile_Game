@@ -9,25 +9,45 @@ public class Chara : MonoBehaviour
 
     Vector2 beyond;
 
-    public float laneDistance = 4f;
-    public float jumpHeight = 5f;
-    float moveSpeed = 2f; 
+    public float laneDistance;
+    public float jumpHeight;
+    public float moveSpeed;
+
+    public float goodGravity;
+    public float badGravity; 
+
+    public bool gray; 
+
+
 
     void Start()
     {
         chara = GetComponent<CharacterController>();
+        gray = true;
 
     }
 
     private void Update()
     {
         beyond.x = moveSpeed;
+        
+
+        if(gray == true)
+        {
+            beyond.y += badGravity * Time.deltaTime;
+        }
+         
+        if(gray == false)
+        {
+            beyond.y += goodGravity * Time.deltaTime;
+        }
 
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
         if (Input.GetButtonDown("Jump"))
         {
             Gravitas();
+            Debug.Log("why");
         }
 
         Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
@@ -36,13 +56,18 @@ public class Chara : MonoBehaviour
 
     void Gravitas()
     {
+        if(!gray)
+        {
+            Debug.Log("do yer thing");
+        }
 
+        beyond.y = jumpHeight; 
     }
 
     private void FixedUpdate()
     {
         //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        //chara.Move(beyond * Time.fixedDeltaTime);
+        chara.Move(beyond * Time.fixedDeltaTime);
     }
 
 }
