@@ -30,9 +30,9 @@ public class Chara : MonoBehaviour
     private void Update()
     {
         beyond.x = moveSpeed;
-        
+        Debug.Log(chara.isGrounded);
 
-        if(gray == true)
+        if (gray == true)
         {
             beyond.y += badGravity * Time.deltaTime;
         }
@@ -48,16 +48,15 @@ public class Chara : MonoBehaviour
         {
             gray = false;
             Gravitas();
-            Debug.Log("why");
-
-            Debug.Log(chara.isGrounded);
+            //Debug.Log("why");
+            
         }
 
         if(gray == false  && Input.GetButtonDown("Fire1"))
         {
             gray = true;
             Gravitas();
-            Debug.Log("because");
+            
         }
 
         //Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
