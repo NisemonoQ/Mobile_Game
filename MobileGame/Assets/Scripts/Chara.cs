@@ -46,8 +46,18 @@ public class Chara : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            gray = false;
             Gravitas();
             Debug.Log("why");
+
+            Debug.Log(chara.isGrounded);
+        }
+
+        if(gray == false  && Input.GetButtonDown("Fire1"))
+        {
+            gray = true;
+            Gravitas();
+            Debug.Log("because");
         }
 
         Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
@@ -56,12 +66,16 @@ public class Chara : MonoBehaviour
 
     void Gravitas()
     {
-        if(!gray)
+        if(gray == true)
         {
-            Debug.Log("do yer thing");
+            beyond.y = jumpHeight;
         }
+         
 
-        beyond.y = jumpHeight; 
+        if(gray == false)
+        {
+            beyond.y = -jumpHeight; 
+        }
     }
 
     private void FixedUpdate()
