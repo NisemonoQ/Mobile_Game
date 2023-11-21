@@ -60,8 +60,8 @@ public class Chara : MonoBehaviour
             Debug.Log("because");
         }
 
-        Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
-        transform.position = Vector2.Lerp(transform.position, targetPosition, 50f * Time.deltaTime);
+        //Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
+       // transform.position = Vector2.Lerp(transform.position, targetPosition, 50f * Time.deltaTime);
     }
 
     void Gravitas()
