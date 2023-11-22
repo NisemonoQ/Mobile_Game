@@ -46,7 +46,7 @@ public class Chara : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.up * gray, .6f, ~mask))
         {
             grounded = true;
-            Debug.Log("work");
+           // Debug.Log("work");
         }
 
         else
