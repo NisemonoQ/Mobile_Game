@@ -4,85 +4,114 @@ using UnityEngine;
 
 public class Chara : MonoBehaviour
 {
-    private CharacterController chara;
-    GameObject perso;
+    private Rigidbody chara;
+    
 
-    Vector2 beyond;
+    //Vector2 beyond;
 
     public float laneDistance;
     public float jumpHeight;
     public float moveSpeed;
+    public int gray;
 
-    public float goodGravity;
-    public float badGravity; 
+    public float heightForce = 5f; 
 
-    public bool gray; 
+    private bool grounded; 
+    public LayerMask mask; 
 
 
 
     void Start()
     {
-        chara = GetComponent<CharacterController>();
-        perso = GetComponent<GameObject>();
-        gray = true;
-        beyond = transform.position;
+        chara = GetComponent<Rigidbody>();
+        
+        gray = -1;
+        //beyond = transform.position;
 
     }
 
     private void Update()
     {
-        beyond.x = moveSpeed;
-        Debug.Log(chara.isGrounded);
+        chara.velocity = Vector3.right * moveSpeed ;
+        Gravitas();
 
-        if (gray == true)
+        if(Input.GetButtonDown("Jump") && grounded)
         {
-            beyond.y += badGravity * Time.deltaTime;
+            gray *= -1; 
         }
-         
-        if(gray == false)
-        {
-            beyond.y += goodGravity * Time.deltaTime;
-        }
-
-        transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            gray = false;
-            Gravitas();
-            //Debug.Log("why");
-            
-        }
-
-        if(gray == false  && Input.GetButtonDown("Fire1"))
-        {
-            gray = true;
-            Gravitas();
-            
-        }
-
-        //Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
-       // transform.position = Vector2.Lerp(transform.position, targetPosition, 50f * Time.deltaTime);
     }
 
     void Gravitas()
     {
-        if(gray == true)
+        if(Physics.Raycast(transform.position, Vector3.up * gray, .6f, ~mask))
         {
-            beyond.y = jumpHeight;
+            grounded = true;
+            Debug.Log("work");
         }
-         
 
-        if(gray == false)
+        else
         {
-            beyond.y = -jumpHeight; 
+            grounded = false;
+            chara.velocity += Vector3.up * gray * heightForce;
+
         }
     }
 
-    private void FixedUpdate()
-    {
-        //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        chara.Move(beyond * Time.fixedDeltaTime);
-    }
+
+    /* private void Update()
+     {
+         beyond.x = moveSpeed;
+         Debug.Log(chara.isGrounded);
+
+         if (gray == true)
+         {
+             beyond.y += badGravity * Time.deltaTime;
+         }
+
+         if(gray == false)
+         {
+             beyond.y += goodGravity * Time.deltaTime;
+         }
+
+         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+
+         if (Input.GetButtonDown("Jump"))
+         {
+             gray = false;
+             Gravitas();
+             //Debug.Log("why");
+
+         }
+
+         if(gray == false  && Input.GetButtonDown("Fire1"))
+         {
+             gray = true;
+             Gravitas();
+
+         }
+
+         //Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
+        // transform.position = Vector2.Lerp(transform.position, targetPosition, 50f * Time.deltaTime);
+     }
+
+     void Gravitas()
+     {
+         if(gray == true)
+         {
+             beyond.y = jumpHeight;
+         }
+
+
+         if(gray == false)
+         {
+             beyond.y = -jumpHeight; 
+         }
+     }
+
+     private void FixedUpdate()
+     {
+         //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+         chara.Move(beyond * Time.fixedDeltaTime);
+     }*/
 
 }

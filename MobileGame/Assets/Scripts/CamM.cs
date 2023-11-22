@@ -13,9 +13,9 @@ public class CamM : MonoBehaviour
     }
 
 
-    void LateUpdate()
+    void Update()
     {
-        Vector2 ext = new Vector2(target.position.x + offset.x, transform.position.y);
-        transform.position = Vector2.Lerp(transform.position, ext, 5f * Time.deltaTime);
+        Vector3 ext = new Vector3(target.position.x + offset.x, transform.position.y, transform.position.z);
+        transform.position = ext; 
     }
 }
