@@ -38,6 +38,7 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{4ddcf556-18c1-46c6-84a3-ab681d712e18}</destination>
+			<destination>{1110e855-14bb-4317-ba1a-72c58668d1b5}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{233afd41-2900-4c9d-b8f5-54f0dad0649c}</destination>
@@ -161,6 +162,11 @@
 	<object class="ParameterProxy" id="{4ddcf556-18c1-46c6-84a3-ab681d712e18}">
 		<relationship name="preset">
 			<destination>{ad6e94c1-3726-44ef-9f2e-26b46c4cdd28}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterProxy" id="{1110e855-14bb-4317-ba1a-72c58668d1b5}">
+		<relationship name="preset">
+			<destination>{dd099eb7-8f02-4d05-b25f-a314b0ba3d6c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{03220f5e-3862-4e3c-b282-f517814eb0f2}">
@@ -961,7 +967,7 @@
 	<object class="MixerBusFader" id="{20e97a7d-9968-4640-84a7-600b2d7b9784}" />
 	<object class="GainEffect" id="{f95f78b5-19c0-4143-a24f-89a3549a29a1}">
 		<property name="gain">
-			<value>-3</value>
+			<value>-8</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{3f5e2581-7227-4680-b065-8247016405e8}">
