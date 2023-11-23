@@ -14,6 +14,8 @@ public class Chara : MonoBehaviour
     public float moveSpeed;
     public int gray;
 
+    private bool oneMore;
+
     public float heightForce = 5f; 
 
     private bool grounded; 
@@ -33,11 +35,17 @@ public class Chara : MonoBehaviour
     private void Update()
     {
         chara.velocity = Vector3.right * moveSpeed ;
+        Vector3 noVelocity = new Vector3(0f, 0f, 0f);
         Gravitas();
 
         if(Input.GetButtonDown("Jump") && grounded)
         {
             gray *= -1; 
+        }
+
+        if(chara.velocity == noVelocity)
+        {
+            Dead();
         }
     }
 
@@ -57,61 +65,38 @@ public class Chara : MonoBehaviour
         }
     }
 
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("OneMore"))
+        {
+        }
+    }*/
 
-    /* private void Update()
-     {
-         beyond.x = moveSpeed;
-         Debug.Log(chara.isGrounded);
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("OneMore"))
+        {
+            OneMoreJump();
+        }
 
-         if (gray == true)
-         {
-             beyond.y += badGravity * Time.deltaTime;
-         }
+    }
 
-         if(gray == false)
-         {
-             beyond.y += goodGravity * Time.deltaTime;
-         }
+    void OneMoreJump()
+    {
+        oneMore = true; 
+        if(oneMore == true && Input.GetButtonDown("Jump"))
+        {
+            // chara.velocity += Vector3.up * gray * heightForce;
+            //grounded = false;
+            gray *= -1;
+            oneMore = false;
+            Debug.Log("GOGOGO");
+        }
+    }
 
-         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-
-         if (Input.GetButtonDown("Jump"))
-         {
-             gray = false;
-             Gravitas();
-             //Debug.Log("why");
-
-         }
-
-         if(gray == false  && Input.GetButtonDown("Fire1"))
-         {
-             gray = true;
-             Gravitas();
-
-         }
-
-         //Vector2 targetPosition = transform.position.x * transform.right + transform.position.y * transform.up;
-        // transform.position = Vector2.Lerp(transform.position, targetPosition, 50f * Time.deltaTime);
-     }
-
-     void Gravitas()
-     {
-         if(gray == true)
-         {
-             beyond.y = jumpHeight;
-         }
-
-
-         if(gray == false)
-         {
-             beyond.y = -jumpHeight; 
-         }
-     }
-
-     private void FixedUpdate()
-     {
-         //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-         chara.Move(beyond * Time.fixedDeltaTime);
-     }*/
+    void Dead()
+    {
+        
+    }
 
 }
