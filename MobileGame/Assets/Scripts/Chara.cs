@@ -29,7 +29,7 @@ public class Chara : MonoBehaviour
     void Start()
     {
         chara = GetComponent<Rigidbody>();
-        
+        score = 0;
         gray = -1;
         //beyond = transform.position;
 
