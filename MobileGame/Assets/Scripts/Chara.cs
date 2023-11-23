@@ -40,7 +40,7 @@ public class Chara : MonoBehaviour
         Vector3 noVelocity = new Vector3(0f, 0f, 0f);
         Gravitas();
 
-        if(Input.GetButtonDown("Jump") && grounded)
+        if(Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && grounded)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gray *= -1; 
@@ -86,7 +86,7 @@ public class Chara : MonoBehaviour
     {
         grounded = true; 
         oneMore = true; 
-        if(oneMore == true && Input.GetButtonDown("Jump"))
+        if(oneMore == true /*&& Input.GetButtonDown("Jump")*/)
         {             
             // chara.velocity += Vector3.up * gray * heightForce;
             //grounded = false;
