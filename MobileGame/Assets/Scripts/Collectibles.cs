@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Collectibles : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Chara fraud;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.CompareTag("Player"))
+        {
+            fraud.score += 1;
+            //gameObject.SetActive(false);            
+            Debug.Log(fraud.score);
+            
+        }
     }
 }

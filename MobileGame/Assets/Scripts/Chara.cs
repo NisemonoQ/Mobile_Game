@@ -14,6 +14,9 @@ public class Chara : MonoBehaviour
     public float moveSpeed;
     public int gray;
 
+    public int score = 0;
+
+
     private bool oneMore;
 
     public float heightForce = 5f; 
@@ -54,38 +57,35 @@ public class Chara : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.up * gray, .6f, ~mask))
         {
             grounded = true;
-           // Debug.Log("work");
+            //Debug.Log("work");
         }
 
         else
         {
             grounded = false;
             chara.velocity += Vector3.up * gray * heightForce;
+            Debug.Log("dont");
 
         }
     }
 
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("OneMore"))
-        {
-        }
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("OneMore"))
         {
             OneMoreJump();
+            Debug.Log("GOOOOOOOO");
         }
 
     }
 
     void OneMoreJump()
     {
+        grounded = true; 
         oneMore = true; 
-        if(oneMore == true && Input.GetButtonDown("Jump"))
-        {
+        if(oneMore == true /*&& Input.GetButtonDown("Jump")*/)
+        {             
             // chara.velocity += Vector3.up * gray * heightForce;
             //grounded = false;
             gray *= -1;
