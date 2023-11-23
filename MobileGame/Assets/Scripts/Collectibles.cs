@@ -5,9 +5,13 @@ using UnityEngine;
 public class Collectibles : MonoBehaviour
 {
     public Chara fraud;
-    void Start()
+    MeshRenderer coin;
+
+    public float timing = 5f;
+
+    private void Start()
     {
-        
+        coin = GetComponent<MeshRenderer>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -15,9 +19,21 @@ public class Collectibles : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             fraud.score += 1;
+            coin.enabled = false;
             //gameObject.SetActive(false);            
-            Debug.Log(fraud.score);
-            
+            Debug.Log(fraud.score);            
         }
     }
+
+    /*private void Update()
+    {
+        timing -= 1f * Time.deltaTime; 
+        if(timing<=0f)
+        {
+            timing = 5f; 
+            Destroy(gameObject);
+        }
+
+    }*/
+
 }
