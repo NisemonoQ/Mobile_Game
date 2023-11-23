@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class RestrartDAScene : MonoBehaviour
 {
+
+    private string CurrentScene;
     void Start()
     {
-        
+        CurrentScene = SceneManager.GetActiveScene().name;  
     }
 
     // Update is called once per frame
@@ -15,7 +17,7 @@ public class RestrartDAScene : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Test LD 1", LoadSceneMode.Single);
+            SceneManager.LoadScene(CurrentScene);
         }
     }
 }

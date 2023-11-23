@@ -8,7 +8,16 @@ public class Spikes : MonoBehaviour
 {
     public GameObject player;
     float attend = 5f;
+
+    private string ThisScene;
+
     //public MeshRenderer playerMesh;
+
+
+    private void Start()
+    {
+        ThisScene = SceneManager.GetActiveScene().name; 
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,12 +36,12 @@ public class Spikes : MonoBehaviour
     {
         if(player.activeSelf == false)
         {
-            attend -= 1.5f * Time.deltaTime; 
+            attend -= 2.5f * Time.deltaTime; 
         }
 
         if(attend <= 0f)
         {
-            SceneManager.LoadScene("Test LD 1", LoadSceneMode.Single);
+            SceneManager.LoadScene(ThisScene);
         }
     }
 
