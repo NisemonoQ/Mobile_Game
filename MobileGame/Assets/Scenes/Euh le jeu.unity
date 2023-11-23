@@ -2269,6 +2269,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 503624483053299283, guid: e982e7c6c8fc2ea4ea9e28a4940d2c69, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 76c0d30f9e3e6d14ba4c6dadfb0deb05, type: 2}
     - target: {fileID: 4750081786980535042, guid: e982e7c6c8fc2ea4ea9e28a4940d2c69, type: 3}
       propertyPath: gray
       value: -1
@@ -2353,14 +2357,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4750081786980535048, guid: e982e7c6c8fc2ea4ea9e28a4940d2c69, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750081786980535048, guid: e982e7c6c8fc2ea4ea9e28a4940d2c69, type: 3}
-      propertyPath: m_Material
+    - target: {fileID: 4750081786980535054, guid: e982e7c6c8fc2ea4ea9e28a4940d2c69, type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 13400000, guid: 76c0d30f9e3e6d14ba4c6dadfb0deb05, type: 2}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 4750081787008253558, guid: e982e7c6c8fc2ea4ea9e28a4940d2c69, type: 3}
       propertyPath: m_Layer
       value: 2

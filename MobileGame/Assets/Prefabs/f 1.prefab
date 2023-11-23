@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4750081786980535043}
   - component: {fileID: 4750081786980535054}
   - component: {fileID: 4750081786980535055}
-  - component: {fileID: 4750081786980535048}
   - component: {fileID: 4750081786980535042}
+  - component: {fileID: 503624483053299283}
   m_Layer: 0
   m_Name: f 1
   m_TagString: Untagged
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4750081786980535048
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4750081786980535047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4750081786980535042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,9 +101,24 @@ MonoBehaviour:
   laneDistance: 4
   jumpHeight: 10
   moveSpeed: 2
-  goodGravity: -15
-  badGravity: 15
   gray: 0
+  heightForce: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!135 &503624483053299283
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750081786980535047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4750081787008253558
 GameObject:
   m_ObjectHideFlags: 0
