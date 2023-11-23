@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Chara : MonoBehaviour
 {
     private Rigidbody chara;
@@ -59,16 +58,15 @@ public class Chara : MonoBehaviour
         {
             grounded = true;
             
-
             //Debug.Log("work");
         }
 
         else
         {
             grounded = false;
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/Landing");
             chara.velocity += Vector3.up * gray * heightForce;
-            Debug.Log("dont");
-            
+            //Debug.Log("dont");
 
         }
     }
@@ -88,12 +86,11 @@ public class Chara : MonoBehaviour
     {
         grounded = true; 
         oneMore = true; 
-        if(oneMore == true /*&& Input.GetButtonDown("Jump")*/)
+        if(oneMore == true && Input.GetButtonDown("Jump"))
         {             
             // chara.velocity += Vector3.up * gray * heightForce;
             //grounded = false;
             gray *= -1;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             oneMore = false;
             Debug.Log("GOGOGO");
         }

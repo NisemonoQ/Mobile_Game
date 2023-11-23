@@ -21,8 +21,8 @@ public class Collectibles : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            fraud.score += 1;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Item");
+            fraud.score += 1;            
             //coin.enabled = false;
             Destroy(gameObject);            
             Debug.Log(fraud.score);            
