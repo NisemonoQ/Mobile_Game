@@ -19,8 +19,8 @@ public class Collectibles : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             fraud.score += 1;
-            coin.enabled = false;
-            //gameObject.SetActive(false);            
+            //coin.enabled = false;
+            Destroy(gameObject);            
             Debug.Log(fraud.score);            
         }
     }

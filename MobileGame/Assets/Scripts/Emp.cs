@@ -11,10 +11,11 @@ public class Emp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player.SetActive(false);
-            //playerMesh.enabled = false; 
-
+            //player.SetActive(false);
             Debug.Log("He is dead");
+            Destroy(player);
+            
+            //playerMesh.enabled = false;             
         }
     }
 }
