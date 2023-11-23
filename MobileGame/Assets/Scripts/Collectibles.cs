@@ -12,6 +12,7 @@ public class Collectibles : MonoBehaviour
     private void Start()
     {
         coin = GetComponent<MeshRenderer>();
+        fraud.score = 0;
     }
 
     private void OnTriggerEnter(Collider other)
