@@ -11,6 +11,8 @@ public class Spikes : MonoBehaviour
     {
          if(other.CompareTag("Player"))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Mort");
+
             player.SetActive(false);
             //playerMesh.enabled = false; 
             

@@ -43,6 +43,7 @@ public class Chara : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && grounded)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gray *= -1; 
         }
 
@@ -57,6 +58,8 @@ public class Chara : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.up * gray, .6f, ~mask))
         {
             grounded = true;
+            
+
             //Debug.Log("work");
         }
 
@@ -65,6 +68,7 @@ public class Chara : MonoBehaviour
             grounded = false;
             chara.velocity += Vector3.up * gray * heightForce;
             Debug.Log("dont");
+            
 
         }
     }
@@ -89,6 +93,7 @@ public class Chara : MonoBehaviour
             // chara.velocity += Vector3.up * gray * heightForce;
             //grounded = false;
             gray *= -1;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             oneMore = false;
             Debug.Log("GOGOGO");
         }
