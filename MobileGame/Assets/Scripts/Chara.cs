@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class Chara : MonoBehaviour
 {
     [SerializeField] FMOD.Studio.EventInstance music;
-    [SerializeField] UIScript script; 
+    [SerializeField] UIScript script;
+    [SerializeField]Transform charaTP;
+    [SerializeField] Transform StrartingPoint;
+
+
     private Rigidbody chara;
     public Text scoring;
     //Vector2 beyond;
@@ -34,6 +38,8 @@ public class Chara : MonoBehaviour
         chara = GetComponent<Rigidbody>();
         score = 0f;
         gray = -1;
+
+        charaTP = GetComponent<Transform>();
 
        music = FMODUnity.RuntimeManager.CreateInstance("event:/Musique 2.0");
        music.start();
@@ -82,6 +88,19 @@ public class Chara : MonoBehaviour
         if(other.CompareTag("OneMore"))
         {
             oneMore = true;
+        }
+
+        if(other.CompareTag("Spikes"))
+        {
+            //music.setParameterByName("VARIABLE COUNT", 0);
+            music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+
+        if(other.CompareTag("Teleport"))
+        {
+            charaTP = StrartingPoint;
+            Debug.Log("dont");
+
         }
 
     }
