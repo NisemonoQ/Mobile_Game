@@ -2613,6 +2613,8 @@
 	<object class="MixerBusEffectChain" id="{4601ecd3-b4d5-4d9d-b842-8ddc96ff04bc}">
 		<relationship name="effects">
 			<destination>{672f2f15-a9d7-4a46-afd3-cf773951ed22}</destination>
+			<destination>{df2830dc-41e2-4bef-b6bb-66c5ca424d0b}</destination>
+			<destination>{f7c97a19-47bc-470b-936c-2bd8a06c6b29}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2385eaf6-bdd1-4e4d-b761-f14e4e7ad26f}" />
@@ -2666,6 +2668,9 @@
 	<object class="MixerBusEffectChain" id="{1efa5c55-7239-46d3-af5c-1fd08372e56e}">
 		<relationship name="effects">
 			<destination>{2942b961-3576-47b4-a7ea-723e20e51582}</destination>
+			<destination>{2ee7fcc0-8910-40e9-a641-d5cf13fd0472}</destination>
+			<destination>{938a9634-6044-43bc-a3df-4dd8a614e4cd}</destination>
+			<destination>{06e3ee5d-5f8a-4881-9dee-7e1a17242a89}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a62d5314-a0cb-4e77-9a14-1abdb19181fa}" />
@@ -3140,6 +3145,25 @@
 	</object>
 	<object class="MixerBusFader" id="{6e3dde73-0e7b-4993-bd41-75e0c8e9a214}" />
 	<object class="MixerBusFader" id="{672f2f15-a9d7-4a46-afd3-cf773951ed22}" />
+	<object class="ThreeEQEffect" id="{df2830dc-41e2-4bef-b6bb-66c5ca424d0b}">
+		<property name="lowGain">
+			<value>-4.5</value>
+		</property>
+		<property name="midGain">
+			<value>-7.5</value>
+		</property>
+		<property name="highGain">
+			<value>-3.5</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{f7c97a19-47bc-470b-936c-2bd8a06c6b29}">
+		<property name="decayTime">
+			<value>220</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-20</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{1dcc61d7-a20c-4f8f-98fd-c1d0030b9e80}">
 		<relationship name="parameter">
 			<destination>{55594d2d-5cba-4ab7-8aa3-f87009a3cb3c}</destination>
@@ -3172,6 +3196,30 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{2942b961-3576-47b4-a7ea-723e20e51582}" />
+	<object class="ThreeEQEffect" id="{2ee7fcc0-8910-40e9-a641-d5cf13fd0472}">
+		<property name="lowGain">
+			<value>6</value>
+		</property>
+		<property name="midGain">
+			<value>5.5</value>
+		</property>
+		<property name="highGain">
+			<value>-3.5</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{938a9634-6044-43bc-a3df-4dd8a614e4cd}">
+		<property name="frequencyA">
+			<value>10876.3604</value>
+		</property>
+		<property name="qualityA">
+			<value>0.141862065</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{06e3ee5d-5f8a-4881-9dee-7e1a17242a89}">
+		<property name="gain">
+			<value>-7.5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{2ae84e2a-6f68-40a5-b511-929aec66eceb}" />
 	<object class="AutomationCurve" id="{d0940eab-30ec-4e2f-b39b-af26e336516b}">
 		<relationship name="parameter">
