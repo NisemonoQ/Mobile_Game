@@ -10006,7 +10006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10014,7 +10014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9606053
+      value: 2.4606051
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10221,7 +10221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10229,7 +10229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9606053
+      value: 2.4606051
       objectReference: {fileID: 0}
     - target: {fileID: 7824942720128564144, guid: 0cd38b521ffaa5546927e0fbf74eea30, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20342,6 +20342,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1611613749, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 312.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611613749, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611613749, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -712.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1101.9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790324750313820671, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 232.79997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499882541840146700, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6387296984534211264, guid: 478e2f75d9d70fd4aab83dafcbd7980e, type: 3}
       propertyPath: CurrentScene
       value: Test LD 1
