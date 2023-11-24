@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4750081786980535043
 Transform:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   jumpHeight: 10
   moveSpeed: 2
   gray: 0
-  score: 0
+  score: 1
   heightForce: 5
   mask:
     serializedVersion: 2

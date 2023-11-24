@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class Spikes : MonoBehaviour
 {
     public GameObject player;
-    float attend = 5f;
+    public float attend = 3f;
+
+    [SerializeField] GameObject UI; 
 
     private string ThisScene;
 
@@ -28,21 +31,11 @@ public class Spikes : MonoBehaviour
             //playerMesh.enabled = false;             
             Debug.Log("He is dead");
 
-            
+
+            UI.GetComponent<UIScript>().ButtonEmpty();
+            //Invoke("ReloadScene", attend);
+
+
         }
     }
-
-    private void Update()
-    {
-        if(player.activeSelf == false)
-        {
-            attend -= 3.5f * Time.deltaTime; 
-        }
-
-        if(attend <= 0f)
-        {
-            SceneManager.LoadScene(ThisScene);
-        }
-    }
-
 }
