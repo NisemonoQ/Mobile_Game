@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Chara : MonoBehaviour
 {
+    [SerializeField] FMOD.Studio.EventInstance music;
+    [SerializeField] UIScript script; 
     private Rigidbody chara;
     public Text scoring;
     //Vector2 beyond;
@@ -14,10 +16,11 @@ public class Chara : MonoBehaviour
     public float moveSpeed;
     public int gray;
 
-    public int score = 0;
+    public float score = 0f;
 
 
     private bool oneMore;
+    public bool alive = true;
 
     public float heightForce = 5f; 
 
@@ -29,8 +32,11 @@ public class Chara : MonoBehaviour
     void Start()
     {
         chara = GetComponent<Rigidbody>();
-        score = 0;
+        score = 0f;
         gray = -1;
+
+       music = FMODUnity.RuntimeManager.CreateInstance("event:/Musique 2.0");
+       music.start();
         //beyond = transform.position;
 
     }
@@ -42,16 +48,12 @@ public class Chara : MonoBehaviour
         Gravitas();
 
         scoring.text = score.ToString();
+        music.setParameterByName("VARIABLE COUNT",score);
 
         if ((Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && grounded) || (Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && oneMore))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gray *= -1; 
-        }
-
-        if(chara.velocity == noVelocity)
-        {
-            Dead();
         }
     }
 

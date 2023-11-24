@@ -8,14 +8,13 @@ using UnityEngine.UI;
 public class Spikes : MonoBehaviour
 {
     public GameObject player;
+    public Chara p; 
     public float attend = 3f;
 
     [SerializeField] GameObject UI; 
 
     private string ThisScene;
-
     //public MeshRenderer playerMesh;
-
 
     private void Start()
     {
@@ -25,17 +24,17 @@ public class Spikes : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
          if(other.CompareTag("Player"))
-        {
+         {
+            
             FMODUnity.RuntimeManager.PlayOneShot("event:/Mort");
+            p.alive = false;
+            p.score = 0f; 
             player.SetActive(false);
-            //playerMesh.enabled = false;             
+           
             Debug.Log("He is dead");
-
 
             UI.GetComponent<UIScript>().ButtonEmpty();
             //Invoke("ReloadScene", attend);
-
-
-        }
+         }
     }
 }

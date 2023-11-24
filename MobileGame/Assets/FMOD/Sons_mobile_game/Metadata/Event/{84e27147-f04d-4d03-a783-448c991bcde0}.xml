@@ -81,6 +81,9 @@
 		<relationship name="parameters">
 			<destination>{5859ffed-cdab-4086-b44f-6e132e5dc841}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{233afd41-2900-4c9d-b8f5-54f0dad0649c}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{6dfae6f6-ec01-4641-9c0d-ab201a7456a4}">
 		<relationship name="masterBus">
@@ -103,7 +106,11 @@
 			<destination>{ecbe872d-3923-4954-b63d-c64d1640e75f}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{a51a402d-c847-4af3-971f-d4fde666761e}" />
+	<object class="EventAutomatableProperties" id="{a51a402d-c847-4af3-971f-d4fde666761e}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{784b3e17-357d-4718-bcb0-6e575a6c04cf}" />
 	<object class="GroupTrack" id="{7905dd88-f1b0-495d-b68c-54d75d28fa6e}">
 		<relationship name="automationTracks">
@@ -1684,7 +1691,6 @@
 		<property name="length">
 			<value>168</value>
 		</property>
-		<property name="name" />
 		<relationship name="audioFile">
 			<destination>{b350b5a7-f9d2-469c-ab1c-0b445bfb9c53}</destination>
 		</relationship>
