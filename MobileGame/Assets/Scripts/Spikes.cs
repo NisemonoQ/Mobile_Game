@@ -36,7 +36,7 @@ public class Spikes : MonoBehaviour
     {
         if(player.activeSelf == false)
         {
-            attend -= 2.5f * Time.deltaTime; 
+            attend -= 3.5f * Time.deltaTime; 
         }
 
         if(attend <= 0f)

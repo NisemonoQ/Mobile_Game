@@ -40,7 +40,7 @@ public class Chara : MonoBehaviour
         Vector3 noVelocity = new Vector3(0f, 0f, 0f);
         Gravitas();
 
-        if(Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && grounded)
+        if((Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && grounded) || (Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && oneMore))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gray *= -1; 
@@ -76,23 +76,18 @@ public class Chara : MonoBehaviour
     {
         if(other.CompareTag("OneMore"))
         {
-            OneMoreJump();
-            Debug.Log("GOOOOOOOO");
+            oneMore = true;
+
         }
 
     }
 
-    void OneMoreJump()
+    private void OnTriggerExit(Collider other)
     {
-        grounded = true; 
-        oneMore = true; 
-        if(oneMore == true /*&& Input.GetButtonDown("Jump")*/)
-        {             
-            // chara.velocity += Vector3.up * gray * heightForce;
-            //grounded = false;
-            gray *= -1;
+        if (other.CompareTag("OneMore"))
+        {
             oneMore = false;
-            Debug.Log("GOGOGO");
+
         }
     }
 
