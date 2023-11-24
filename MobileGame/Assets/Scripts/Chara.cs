@@ -98,7 +98,7 @@ public class Chara : MonoBehaviour
 
         if(other.CompareTag("Teleport"))
         {
-            charaTP = StrartingPoint;
+            charaTP.position = StrartingPoint.position;
             Debug.Log("dont");
 
         }

@@ -7,6 +7,7 @@ TagManager:
   - Spikes
   - void
   - OneMore
+  - Teleport
   layers:
   - Default
   - TransparentFX
