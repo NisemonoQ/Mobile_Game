@@ -9,6 +9,8 @@ public class Collectibles : MonoBehaviour
     public Chara fraud;
     //[SerializeField] FMOD.Studio.EventInstance music;
 
+    public GameObject spriteToRemove;
+
 
     private void Start()
     {
@@ -27,7 +29,8 @@ public class Collectibles : MonoBehaviour
             //music.setParameterByName("VALUABLE COUNT", fraud.score);
 
             //coin.enabled = false;
-            Destroy(gameObject);            
+            Destroy(gameObject);
+            Destroy(spriteToRemove);
             Debug.Log(fraud.score);            
         }
     }
