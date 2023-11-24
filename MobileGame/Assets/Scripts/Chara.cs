@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Chara : MonoBehaviour
 {
     private Rigidbody chara;
-    
-
+    public Text scoring;
     //Vector2 beyond;
 
     public float laneDistance;
@@ -42,7 +41,9 @@ public class Chara : MonoBehaviour
         Vector3 noVelocity = new Vector3(0f, 0f, 0f);
         Gravitas();
 
-        if((Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && grounded) || (Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && oneMore))
+        scoring.text = score.ToString();
+
+        if ((Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && grounded) || (Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Began && oneMore))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
             gray *= -1; 
