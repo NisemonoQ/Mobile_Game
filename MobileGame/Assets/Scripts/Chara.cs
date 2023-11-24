@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Chara : MonoBehaviour
 {
     private Rigidbody chara;
@@ -77,7 +79,6 @@ public class Chara : MonoBehaviour
         if(other.CompareTag("OneMore"))
         {
             oneMore = true;
-
         }
 
     }
@@ -87,7 +88,6 @@ public class Chara : MonoBehaviour
         if (other.CompareTag("OneMore"))
         {
             oneMore = false;
-
         }
     }
 
